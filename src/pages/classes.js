@@ -1,5 +1,6 @@
 import * as React from "react";
-import Layout from "../components/Layout/Layout"; // ✅ use Layout
+import { navigate } from "gatsby";  // ✅ import navigate
+import Layout from "../components/Layout/Layout";
 import "../styles/classes.css";
 
 const membershipData = [
@@ -38,7 +39,10 @@ const ClassesPage = () => {
               <h3>{item.label}</h3>
               <p className="price">{item.price}</p>
               {item.note && <p className="note">{item.note}</p>}
-              <button>Buy Now</button>
+              {/* ✅ Redirect to Contact Page */}
+              <button onClick={() => navigate("/contact")}>
+                Buy Now
+              </button>
             </div>
           ))}
         </div>

@@ -1,103 +1,98 @@
-import React, { useState } from 'react';
-import Button from '../Button';
-import * as styles from './Contact.module.css';
+import React from 'react';
+import * as styles from './Contact.module.css'; // keep your CSS
 
 const Contact = () => {
-  const initialState = {
-    name: '',
-    phone: '',
-    email: '',
-    comment: '',
-  };
-
-  const [contactForm, setContactForm] = useState(initialState);
-
-  const handleChange = (id, value) => {
-    setContactForm({ ...contactForm, [id]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted:', contactForm);
-    setContactForm(initialState);
-  };
-
   return (
     <div className={styles.root}>
-      {/* Intro */}
+      {/* Top info / intro */}
       <div className={styles.section}>
-        <h2>Contact Us</h2>
+        <h4>Send Us A Message</h4>
         <p>
-          Have questions about classes, memberships, or events? We’d love to hear from you. 
-          Reach out directly or use the form below and we’ll get back to you within 24–48 hours.
+          We’d love to hear from you. Questions about classes, private sessions,
+          school programs, or workshops—send us a note and we’ll reply soon.
         </p>
+        <p><strong>Email:</strong> k.taranbir@yahoo.com</p>
+        <p><strong>Phone:</strong> +1 (416) 856-8206</p>
       </div>
 
-      {/* Contact Info */}
-      <div className={styles.contactInfo}>
-        <p><strong>📞 Phone:</strong> +1 (647) 856-8206</p>
-        <p><strong>📧 Email:</strong> k.taranbir@yahoo.com</p>
-      </div>
+      {/* Contact form connected to Formspree */}
+      <div className={styles.contactContainer}>
+        <form
+          action="https://formspree.io/f/xqaykqbj"  // ✅ your Formspree endpoint
+          method="POST"
+          className={styles.contactForm}
+        >
+          {/* ✅ Redirect users to thanks.js on your domain */}
+          <input type="hidden" name="_redirect" value="https://earthandom.ca/thanks" />
 
-      {/* Contact Card */}
-      <div className={styles.contactCard}>
-        <form onSubmit={handleSubmit} className={styles.contactForm}>
-          {/* Full Name */}
-          <div className={styles.inputGroup}>
-            <label htmlFor="name">Full Name</label>
-            <input
-              id="name"
-              type="text"
-              value={contactForm.name}
-              onChange={(e) => handleChange('name', e.target.value)}
-              placeholder="Enter your full name"
-              required
-            />
+          {/* Subject line for the email */}
+          <input
+            type="hidden"
+            name="_subject"
+            value="New message from Earth & OM website"
+          />
+
+          {/* Spam honeypot */}
+          <input
+            type="text"
+            name="_gotcha"
+            style={{ display: 'none' }}
+            tabIndex="-1"
+            autoComplete="off"
+          />
+
+          <div className={styles.formGrid}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="name">Full Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                placeholder="Your name"
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+                className={styles.input}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label htmlFor="phone">Phone</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Optional"
+                className={styles.input}
+              />
+            </div>
+
+            <div className={`${styles.inputGroup} ${styles.commentInput}`}>
+              <label htmlFor="message">Comments / Questions</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Tell us a little about what you’re looking for…"
+                rows="6"
+                className={styles.textarea}
+              />
+            </div>
           </div>
 
-          {/* Phone Number */}
-          <div className={styles.inputGroup}>
-            <label htmlFor="phone">Phone Number</label>
-            <input
-              id="phone"
-              type="tel"
-              value={contactForm.phone}
-              onChange={(e) => handleChange('phone', e.target.value)}
-              placeholder="Enter your phone number"
-              required
-            />
-          </div>
-
-          {/* Email */}
-          <div className={styles.inputGroup}>
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              value={contactForm.email}
-              onChange={(e) => handleChange('email', e.target.value)}
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-
-          {/* Comment */}
-          <div className={styles.inputGroup}>
-            <label htmlFor="comment">Comments / Questions</label>
-            <textarea
-              id="comment"
-              value={contactForm.comment}
-              onChange={(e) => handleChange('comment', e.target.value)}
-              placeholder="Write your message..."
-              rows="5"
-              required
-            />
-          </div>
-
-          {/* Submit */}
-          <Button className={styles.customButton} level={'primary'} type={'submit'}>
-            Submit
-          </Button>
+          <button type="submit" className={styles.customButton}>
+            Send Message
+          </button>
         </form>
       </div>
     </div>
