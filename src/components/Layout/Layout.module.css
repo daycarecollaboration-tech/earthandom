@@ -12,3 +12,9 @@
         padding-top: 100px;
     }
 }
+.pageContent {
+  padding-top: 150px; /* same as header height */
+}
+.main {
+  padding-top: 80px; /* matches header height */
+}

@@ -1,27 +1,36 @@
-import React from 'react';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLeaf, faHeart, faOm } from "@fortawesome/free-solid-svg-icons";
+import * as styles from "./AttributeGrid.module.css";
 
-import Attribute from '../Attribute';
+const attributes = [
+  {
+    icon: faLeaf,
+    title: "Mind & Body",
+    text: "Classes for all levels to support balance and strength.",
+  },
+  {
+    icon: faHeart,
+    title: "Community",
+    text: "A warm, inclusive space where everyone belongs.",
+  },
+  {
+    icon: faOm,
+    title: "Authentic Practice",
+    text: "Rooted in tradition, guided by compassion.",
+  },
+];
 
-import * as styles from './AttributeGrid.module.css';
-
-const AttributeGrid = (props) => {
+const AttributeGrid = () => {
   return (
     <div className={styles.root}>
-      <Attribute
-        icon={'delivery'}
-        title={'free delivery worldwide'}
-        subtitle={'Click to learn more'}
-      />
-      <Attribute
-        icon={'cycle'}
-        title={'returns'}
-        subtitle={'Return goods in 30 days'}
-      />
-      <Attribute
-        icon={'creditcard'}
-        title={'secured payment'}
-        subtitle={'Shop safely'}
-      />
+      {attributes.map((attr, idx) => (
+        <div key={idx} className={styles.card}>
+          <FontAwesomeIcon icon={attr.icon} className={styles.icon} />
+          <h4>{attr.title}</h4>
+          <p>{attr.text}</p>
+        </div>
+      ))}
     </div>
   );
 };

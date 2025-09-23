@@ -1,0 +1,128 @@
+/* === Hero Section === */
+.about-hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background: #f5f0eb; /* soft beige */
+}
+
+.about-hero img.about-image {
+  max-width: 320px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  border: 5px solid #a89581;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #333;
+}
+
+/* === Fade-in animation === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.9s ease-out forwards;
+}
+
+/* Delay variants for staggered effects */
+.fade-in.delay-1 {
+  animation-delay: 0.2s;
+}
+.fade-in.delay-2 {
+  animation-delay: 0.4s;
+}
+.fade-in.delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* === Content Section === */
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.about-content p {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  border: 2px solid #a89581;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-content p:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #a89581;
+}
+
+/* === Section Blocks === */
+.about-section {
+  margin-top: 50px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  border: 2px solid #a89581;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* === Custom Bullets === */
+.customBullets {
+  list-style-type: disc;
+  margin: 20px 0 20px 20px;
+  padding-left: 20px;
+}
+
+.customBullets li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.customBullets li::marker {
+  font-size: 1.2rem;
+  color: #a89581;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero img.about-image {
+    max-width: 220px;
+  }
+
+  .about-content h2 {
+    font-size: 1.6rem;
+  }
+}

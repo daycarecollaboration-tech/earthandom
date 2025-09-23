@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import Button from '../Button';
-
-import FormInputField from '../FormInputField/FormInputField';
-
 import * as styles from './Contact.module.css';
 
-const Contact = (props) => {
+const Contact = () => {
   const initialState = {
     name: '',
     phone: '',
@@ -15,85 +12,91 @@ const Contact = (props) => {
 
   const [contactForm, setContactForm] = useState(initialState);
 
-  const handleChange = (id, e) => {
-    const tempForm = { ...contactForm, [id]: e };
-    setContactForm(tempForm);
+  const handleChange = (id, value) => {
+    setContactForm({ ...contactForm, [id]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Submitted:', contactForm);
     setContactForm(initialState);
   };
 
   return (
     <div className={styles.root}>
+      {/* Intro */}
       <div className={styles.section}>
-        <h4>Send Us A Message</h4>
+        <h2>Contact Us</h2>
         <p>
-          Our Customer Service team are here for all enquiries Monday to Friday,
-          9am - 5pm AEDT (Australian Eastern Daylight Savings Time).
-        </p>
-        <p>We look forward to hearing from you.</p>
-      </div>
-
-      <div className={styles.section}>
-        <h4>Phone</h4>
-        <p>+1 424 280 4971</p>
-        <p>Monday to Friday - 9am - 5pm AEDT</p>
-      </div>
-
-      <div className={styles.section}>
-        <h4>Email</h4>
-        <p>
-          You can email our Customer Service team at customerservice@example.com
-          or via the contact form below:
+          Have questions about classes, memberships, or events? We’d love to hear from you. 
+          Reach out directly or use the form below and we’ll get back to you within 24–48 hours.
         </p>
       </div>
 
-      <div className={styles.contactContainer}>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <div className={styles.contactForm}>
-            <FormInputField
-              id={'name'}
+      {/* Contact Info */}
+      <div className={styles.contactInfo}>
+        <p><strong>📞 Phone:</strong> +1 (647) 856-8206</p>
+        <p><strong>📧 Email:</strong> k.taranbir@yahoo.com</p>
+      </div>
+
+      {/* Contact Card */}
+      <div className={styles.contactCard}>
+        <form onSubmit={handleSubmit} className={styles.contactForm}>
+          {/* Full Name */}
+          <div className={styles.inputGroup}>
+            <label htmlFor="name">Full Name</label>
+            <input
+              id="name"
+              type="text"
               value={contactForm.name}
-              handleChange={(id, e) => handleChange(id, e)}
-              type={'text'}
-              labelName={'Full Name'}
+              onChange={(e) => handleChange('name', e.target.value)}
+              placeholder="Enter your full name"
               required
             />
-            <FormInputField
-              id={'phone'}
-              value={contactForm.phone}
-              handleChange={(id, e) => handleChange(id, e)}
-              type={'number'}
-              labelName={'Phone Number'}
-              required
-            />
-            <FormInputField
-              id={'email'}
-              value={contactForm.email}
-              handleChange={(id, e) => handleChange(id, e)}
-              type={'email'}
-              labelName={'Email'}
-              required
-            />
-            <div className={styles.commentInput}>
-              <FormInputField
-                id={'comment'}
-                value={contactForm.comment}
-                handleChange={(id, e) => handleChange(id, e)}
-                type={'textarea'}
-                labelName={'Comments / Questions'}
-                required
-              />
-            </div>
           </div>
-          <Button
-            className={styles.customButton}
-            level={'primary'}
-            type={'buttonSubmit'}
-          >
-            submit
+
+          {/* Phone Number */}
+          <div className={styles.inputGroup}>
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              id="phone"
+              type="tel"
+              value={contactForm.phone}
+              onChange={(e) => handleChange('phone', e.target.value)}
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+
+          {/* Email */}
+          <div className={styles.inputGroup}>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              value={contactForm.email}
+              onChange={(e) => handleChange('email', e.target.value)}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          {/* Comment */}
+          <div className={styles.inputGroup}>
+            <label htmlFor="comment">Comments / Questions</label>
+            <textarea
+              id="comment"
+              value={contactForm.comment}
+              onChange={(e) => handleChange('comment', e.target.value)}
+              placeholder="Write your message..."
+              rows="5"
+              required
+            />
+          </div>
+
+          {/* Submit */}
+          <Button className={styles.customButton} level={'primary'} type={'submit'}>
+            Submit
           </Button>
         </form>
       </div>

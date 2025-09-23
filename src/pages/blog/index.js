@@ -1,70 +1,24 @@
 import React from 'react';
-import { navigate } from 'gatsby';
+import { Link } from 'gatsby';
 
-import BlogPreviewGrid from '../../components/BlogPreviewGrid';
-import Container from '../../components/Container';
-import Hero from '../../components/Hero';
 import Layout from '../../components/Layout/Layout';
-import ThemeLink from '../../components/ThemeLink';
-
-import { generateMockBlogData } from '../../helpers/mock';
+import Hero from '../../components/Hero';
 import * as styles from './index.module.css';
 import { toOptimizedImage } from '../../helpers/general';
 
-const BlogPage = (props) => {
-  const blogData = generateMockBlogData(6);
-
+const BlogPage = () => {
   return (
     <Layout disablePaddingBottom>
       <div className={styles.root}>
+        {/* Hero rectangle with "Coming Soon" */}
         <Hero
-          maxWidth={'400px'}
+          maxWidth={'500px'}
           image={toOptimizedImage('/blogCover.png')}
-          title={`The new standard of Closing`}
-          ctaLink={'read story'}
-          ctaTo={'/blog/sample'}
-          header={'design'}
+          title={'Coming Soon'}
+          subtitle={'Our blog is under construction. In the meantime, explore our yoga offerings.'}
+          ctaLink={'Explore Our Classes'}
+          ctaTo={'/classes'}
         />
-
-        <div className={styles.navContainer}>
-          <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
-          >
-            All Posts
-          </ThemeLink>
-          <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
-          >
-            Design
-          </ThemeLink>
-          <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
-          >
-            Collaboration
-          </ThemeLink>
-          <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
-          >
-            Interview
-          </ThemeLink>
-          <ThemeLink
-            onClick={() => navigate('/blog/sample')}
-            to={'/blog/sample'}
-          >
-            News
-          </ThemeLink>
-        </div>
-
-        {/* Blog Grid */}
-        <div className={styles.blogsContainer}>
-          <Container size={'large'}>
-            <BlogPreviewGrid data={blogData} hideReadMoreOnWeb showExcerpt />
-          </Container>
-        </div>
       </div>
     </Layout>
   );

@@ -1,0 +1,116 @@
+/* Page wrapper */
+.classes-page-wrapper {
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  background-color: #fafafa;
+}
+
+/* Hero section */
+.classes-hero {
+  text-align: center;
+  padding: 100px 20px 50px;
+  background: #f5f0eb;
+}
+.classes-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #2c2c2c;
+}
+.classes-hero p {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Membership section */
+.classes-memberships {
+  padding: 70px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.classes-memberships h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 45px;
+  color: #2c2c2c;
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+.membership-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.membership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.membership-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.membership-card .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #a89581; /* yoga gold tone */
+}
+.membership-card .note {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+.membership-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #a89581;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}
+.membership-card button:hover {
+  background: #8b7760;
+}
+
+/* Info section */
+.classes-info {
+  padding: 50px 20px;
+  background: #f5f0eb;
+  max-width: 1000px;    /* ✅ keeps it neat */
+  margin: 0 auto;
+  text-align: left;     /* ✅ align text left */
+}
+.classes-info h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: left;     /* ✅ heading aligned left */
+  color: #2c2c2c;
+}
+.classes-info ul {
+  list-style: disc;
+  max-width: 800px;
+  margin: 0;            /* ✅ no auto-centering */
+  padding-left: 20px;
+  color: #555;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+}
+.classes-info li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}

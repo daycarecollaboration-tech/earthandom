@@ -24,121 +24,37 @@
   },
   "footerLinks": [
     {
-      "subTitle": "Info",
+      "subTitle": "Quick Links",
       "links": [
-        {
-          "text": "About Us",
-          "link": "/about"
-        },
-        {
-          "text": "Journal",
-          "link": "/blog"
-        },
-        {
-          "text": "Privacy Policy",
-          "link": "/support#policy"
-        }
-      ]
-    },
-    {
-      "subTitle": "Support",
-      "links": [
-        {
-          "text": "FAQ",
-          "link": "/faq"
-        },
-        {
-          "text": "Contact Us",
-          "link": "/support#contact"
-        },
-        {
-          "text": "Shipping & Returns",
-          "link": "/support#returns"
-        },
-        {
-          "text": "How to use this theme",
-          "link": "/how-to-use"
-        }
+        { "text": "About Us", "link": "/about" },
+        { "text": "Classes", "link": "/classes" },
+        { "text": "Blog", "link": "/blog" },
+        { "text": "Contact", "link": "/contact" }
       ]
     }
   ],
   "headerLinks": [
-    {
-      "menuLabel": "Shop",
-      "menuLink": "/shop",
-      "category": [
-        {
-          "categoryLabel": "woman",
-          "submenu": [
-            {
-              "menuLabel": "All clothing",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "jackets",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "trousers",
-              "menuLink": "/shop"
-            }
-          ]
-        },
-        {
-          "categoryLabel": "men",
-          "submenu": [
-            {
-              "menuLabel": "All clothing",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "jackets",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "trousers",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "pants",
-              "menuLink": "/shop"
-            }
-          ]
-        },
-        {
-          "categoryLabel": "accessories",
-          "submenu": [
-            {
-              "menuLabel": "caps & scarves",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "bags",
-              "menuLink": "/shop"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "menuLabel": "journal",
-      "menuLink": "/blog",
-      "category": null
-    },
-    {
-      "menuLabel": "About",
-      "menuLink": "/about",
-      "category": null
-    }
-  ],
+  {
+    "menuLabel": "About",
+    "menuLink": "/about",
+    "category": null
+  },
+  {
+    "menuLabel": "Classes",
+    "menuLink": "/classes",
+    "category": null
+  },
+  {
+    "menuLabel": "Blog",
+    "menuLink": "/blog",
+    "category": null
+  },
+  {
+    "menuLabel": "Contact",
+    "menuLink": "/contact",
+    "category": null
+  }
+],
   "filters": [
     {
       "category": "colour",
@@ -151,7 +67,6 @@
         { "name": "Red", "value": false }
       ]
     },
-
     {
       "category": "size",
       "items": [

@@ -1,98 +1,164 @@
 .root {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .highlightImage {
-    width: 600px;
-    height: 730px;
-    object-fit: cover;
+  width: 600px;
+  height: 730px;
+  object-fit: cover;
 }
 
 .contentContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    max-width: 400px;
-    margin: 0 auto;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+  color: #fff;
+}
+
+/* ✅ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fadeInUp {
+  animation: fadeInUp 1.2s ease-out forwards;
 }
 
 .miniImage {
-    height: 300px;
-    width: 250px;
+  height: 300px;
+  width: 250px;
+  margin-top: 20px;
+  display: block;
+}
+
+.miniImage:empty,
+.miniImage[src=""],
+.miniImage[src="undefined"] {
+  display: none;
 }
 
 .contentContainer h3 {
-    margin-bottom: 24px;
-    font-size: 42px;
-    line-height: 50px;
-    font-weight: normal;
+  margin-bottom: 24px;
+  font-size: 42px;
+  line-height: 50px;
+  font-weight: bold;
+  color: var(--standard-gold);
+}
+
+.lead {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 22px;
+  line-height: 1.8;
+  color: #f9f9f9;
 }
 
 .contentContainer p {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #eaeaea;
+}
+
+.contentContainer p strong {
+  color: var(--standard-gold);
+  font-weight: 600;
 }
 
 .contentContainer a {
-    margin: 40px 0px;
-    color: var(--standard-black);
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--standard-black);
-    transition: all 0.3s ease-in-out;
+  margin: 40px 0px;
+  color: var(--standard-gold);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--standard-gold);
+  transition: all 0.3s ease-in-out;
 
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
 }
 
 .contentContainer a:hover {
-    color: var(--standard-gold);
-    border-bottom: 1px solid var(--standard-gold);
+  color: #fff;
+  border-bottom: 2px solid #fff;
 }
 
+/* Responsive */
 @media (max-width: 1100px) {
-    .highlightImage {
-        width: 100%;
-        height: 100%;
-    }
+  .highlightImage {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media (max-width: 800px) {
+  .contentContainer {
+    margin-bottom: 56px;
+    padding: 20px;
+  }
 
-    .contentContainer {
-        margin-bottom: 56px;
-        padding: 0px 40px;
-    }
+  .root {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
-    .root {
-        display: flex;
-        flex-direction: column-reverse;
-    }
+  .contentContainer h3 {
+    font-size: 32px;
+    line-height: 38px;
+  }
 
-    .contentContainer h3 {
-        font-size: 32px;
-        line-height: 38px;
-    }
+  .lead {
+    font-size: 18px;
+  }
 
-    .contentContainer p {
-        font-size: 14px;
-        line-height: 17px;
-    }
+  .contentContainer p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }
 
 @media (max-width: 400px) {
+  .contentContainer {
+    padding: 15px;
+  }
 
-    .contentContainer {
-        padding: 0px 24px;
-    }
+  .root {
+    flex-direction: column-reverse;
+  }
+}
+.ctaButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: #a89581; /* gold */
+  color: #fff;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
 
-    .root {
-        display: flex;
-        flex-direction: column-reverse;
-    }
+.ctaButton:hover {
+  background-color: #8b7760; /* darker gold */
+  transform: translateY(-2px);
 }

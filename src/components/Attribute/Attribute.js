@@ -1,20 +1,18 @@
-import React from 'react';
+import React from "react";
+import * as styles from "./AttributeGrid.module.css";
 
-import Icon from '../Icons/Icon';
-import * as styles from './Attribute.module.css';
-
-const Attribute = (props) => {
-  const { icon, title, subtitle } = props;
-
+const AttributeGrid = ({ items }) => {
   return (
     <div className={styles.root}>
-      <div className={styles.iconContainer}>
-        <Icon symbol={icon}></Icon>
-      </div>
-      <span className={styles.title}>{title}</span>
-      <span className={styles.subtitle}>{subtitle}</span>
+      {items.map((item, idx) => (
+        <div key={idx} className={styles.attribute}>
+          <div className={styles.icon}>{item.icon}</div>
+          <h4>{item.title}</h4>
+          <p>{item.description}</p>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Attribute;
+export default AttributeGrid;

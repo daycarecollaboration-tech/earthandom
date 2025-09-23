@@ -1,65 +1,103 @@
 .root {
-}
-
-.section:first-child {
-    margin-top: 0px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #333;
 }
 
 .section {
-    margin-top: 48px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.section h4 {
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 26px;
-    margin-bottom: 32px;
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .section p {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px
+  margin: 0 auto;
+  max-width: 600px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ✅ Contact Info Section */
+.contactInfo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.contactInfo p {
+  margin: 6px 0;
+}
+
+/* ✅ Contact Card */
+.contactCard {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  border: 2px solid #a89581; /* gold outline */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .contactForm {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.commentInput {
-    margin-top: 32px;
-    grid-column: 1 / span 2;
+/* ✅ Input Groups */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
+.inputGroup label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: 14px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: #a89581; /* gold */
+  box-shadow: 0 0 6px rgba(168, 149, 129, 0.5);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Submit Button */
 .customButton {
-    width: 220px;
+  background-color: #a89581; /* gold */
+  color: white;
+  padding: 14px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
 }
 
-.contactContainer {
-    margin-top: 32px;
-}
-
-@media (max-width: 800px) {
-    .contactForm {
-        grid-template-columns: 1fr;
-    }
-
-    .commentInput {
-        grid-column: 1; 
-    }
-
-    .customButton {
-        width: 100%;
-    }
-
-    .commentInput {
-        margin-top: 0px;
-    }
-
-    .section h4 {
-        font-size: 22px;
-        line-height: 26px;
-    }
+.customButton:hover {
+  background-color: #8b7760; /* darker gold */
 }
