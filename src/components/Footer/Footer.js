@@ -68,8 +68,11 @@ const Footer = () => {
               <div className={styles.newsLetterContent}>
                 <span className={styles.linkTitle}>Newsletter</span>
                 <p className={styles.promoMessage}>
-                  Get 15% off your first purchase! Plus, be the first to know
-                  about sales, new product launches and exclusive offers!
+                  Stay connected with our yoga community 🌿. Receive mindful tips,
+                  class updates, and exclusive offers designed to support your journey 
+                  on and off the mat.  
+                  <br /><br />
+                  ✨ Enjoy <strong>15% off your first class pass</strong> when you join!
                 </p>
                 <form
                   className={styles.newsLetterForm}
